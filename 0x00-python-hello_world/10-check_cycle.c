@@ -1,29 +1,32 @@
 #include "lists.h"
-
 /**
-  * check_cycle - checks if a singly linked list has a cycle.
-  * @list: pointer to first element.
-  *
-  * Return: 1 if cycle is found 0 if not.
-  */
+ * check_cycle - cycle tortoise and hare
+ * @list: pointer to head
+ * Return: 1 on success, 0 otherwise.
+ */
 int check_cycle(listint_t *list)
 {
-	listint_t *current, *next_node;
+	listint_t *tortoise;
+	listint_t *hare;
 
 	if (list == NULL)
 		return (0);
-
-	current = list;
-	next_node = list;
-
-	while (current && next_node && next_node->next)
+	tortoise = list;
+	hare = list;
+	while (hare->next != NULL && hare->next->next != NULL)
 	{
-		current = current->next;
-		next_node = next_node->next->next;
-		if (current == next_node)
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (tortoise == hare)
+		{
+			tortoise = list;
+			while (tortoise != hare)
+			{
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
 			return (1);
+		}
 	}
-	if (current != next_node)
-		return (0);
-	return (1);
+	return (0);
 }
