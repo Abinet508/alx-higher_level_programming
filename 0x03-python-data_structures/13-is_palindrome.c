@@ -1,36 +1,31 @@
-#include <stdio.h>
 #include "lists.h"
+
 /**
- * is_palindrome - a function that checks for palindrome
- * @head: pointer to a listint_t
- *
- * Return: 0 if it is not a palindrome, 1 if it is
- */
+  * is_palindrome - checks if a singly linked list is a palindrome
+  * @head: double pointer to list.
+  *
+  *Return: 1 if palindrome, 0 if not palindrom.
+  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp;
-	int length = 0, initial = 0;
-	char buffer[1000];
+	return (checkPalindrome(head, *head));
+}
 
-	if (*head == NULL)
+/**
+  * checkPalindrome - recursive function ot check if sinly linked list
+  * is a palindrome.
+  * @headptr: double pointer to list.
+  * @tptr: pointer to list.
+  *
+  * Return: 1 or 0
+  */
+int checkPalindrome(listint_t **headptr, listint_t *tptr)
+{
+	int res;
+
+	/* base case */
+	if (tptr == NULL)
 		return (1);
-	temp = *head;
-	while (temp != NULL)
-	{
-		buffer[length] = temp->n;
-		length++;
-		temp = temp->next;
-	}
-	length--;
-	while (initial < length)
-	{
-		if (buffer[initial] == buffer[length])
-		{
-			initial++;
-			length--;
-		}
-		else
-			return (0);
-	}
-	return (1);
+	res = checkPalindrome(headptr, tptr->next) && ((*headptr)->n == tptr->n);
+	return (res);
 }
