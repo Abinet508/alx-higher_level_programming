@@ -427,7 +427,7 @@ Otherwise, returns False and prints in stderr the error precede by Exception:
             
  ```
 
-- Tip: Python bytecode
+- Tip: [Python bytecode](https://alx-intranet.hbtn.io/rltoken/-eivu0w172OUPm-iCeKgtw)
 
   
 # 103-python.c
