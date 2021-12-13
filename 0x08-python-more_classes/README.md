@@ -3,7 +3,7 @@ Project done during **Full Stack Software Engineering studies** . It aims to lea
 
 ## Technologies
 * Python Scripts are written with Python 3.9
-* Tested on Ubuntu 14.04 LTS
+* Tested on Ubuntu 20.04 LTS
 
 ## Files
 | Filename | Description |
