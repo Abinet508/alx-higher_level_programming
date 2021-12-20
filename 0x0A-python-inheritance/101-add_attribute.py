@@ -1,17 +1,13 @@
 #!/usr/bin/python3
-def add_attribute(obj, name, value):
-    """ Function that adds a new attribute to an object
+"""
+    101-add_attribute: add_attribute()
+"""
 
-    Args:
-        obj: object
-        name: attribute name
-        value: attribute value
 
-    Raises:
-        TypeError: when the attribute can't be added
-
+def add_attribute(cls, name, value):
     """
-
-    if not hasattr(obj, "__dict__"):
+        adds a new attribute if possible.
+    """
+    if hasattr(cls, "__dict__") is False:
         raise TypeError("can't add new attribute")
-    setattr(obj, name, value)
+    setattr(cls, name, value)
