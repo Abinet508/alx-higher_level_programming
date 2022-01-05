@@ -3,7 +3,6 @@
 """Defines a base model class."""
 import json
 import csv
-<<<<<<< HEAD
 import turtle
 
 
@@ -14,19 +13,6 @@ class Base:
 
     Attributes:
         __nb_objects (int): The number of instantiated Bases.
-=======
-import turtle 
-
-
-class Base:
-    """
-    base class for the entire project.
-    Attributes:
-    __nb_ojects (int)
-    id (int)
-    Methods:
-    __init__()
->>>>>>> a52b5220e856605df73ad4daf7a62889a2a349a2
     """
 
     __nb_objects = 0
@@ -37,17 +23,9 @@ class Base:
         Args:
             id (int): The identity of the new Base.
         """
-<<<<<<< HEAD
         if id is not None:
             self.id = id
         else:
-=======
-        Initializes the class attributes.
-        Args:
-        id (int)
-        """
-        if id is None:
->>>>>>> a52b5220e856605df73ad4daf7a62889a2a349a2
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
@@ -95,7 +73,6 @@ class Base:
     def create(cls, **dictionary):
         """Return a class instantied from a dictionary of attributes.
 
-<<<<<<< HEAD
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
         """
@@ -106,14 +83,6 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
-=======
-        if cls.__name__ == "Rectangle":
-            mod = Rectangle(2, 7)
-        elif cls.__name__ == "Square":
-            mod = Square(6)
-        mod.update(**dictionary)
-        return mod
->>>>>>> a52b5220e856605df73ad4daf7a62889a2a349a2
 
     @classmethod
     def load_from_file(cls):
@@ -177,23 +146,6 @@ class Base:
         except IOError:
             return []
 
-<<<<<<< HEAD
-=======
-        with open(fname, "r") as cfile:
-            if cls.__name__ == "Rectangle":
-                reader = csv.DictReader(cfile, fieldnames={'id','width','height', 'x', 'y'})
-            elif cls.__name__ == "Square":
-                reader = csv.DictReader(cfile, fieldnames={'id', 'size', 'x', 'y'})
-
-            instances = []
-            for instance in reader:
-                instance = {x: int(y) for x, y in instance.items()}
-                temp = cls.create(**instance)
-                instances.append(temp)
-
-        return instances
-    
->>>>>>> a52b5220e856605df73ad4daf7a62889a2a349a2
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module.
@@ -203,6 +155,7 @@ class Base:
             list_squares (list): A list of Square objects to draw.
         """
         turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
         turt.pensize(3)
         turt.shape("turtle")
 
