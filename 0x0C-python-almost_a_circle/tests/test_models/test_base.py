@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # test_base.py
-# Brennan D Baraban <375@holbertonschool.com>
 """Defines unittests for base.py.
 
 Unittest classes:
