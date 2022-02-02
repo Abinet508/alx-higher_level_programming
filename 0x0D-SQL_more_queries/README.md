@@ -17,7 +17,7 @@
 
 Write a script that lists all privileges of the MySQL users `user_0d_1` and `user_0d_2` on your server (in `localhost`).
 
-**Solution:** [0-privileges.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/0-privileges.sql)
+
 
 ```
 guillaume@ubuntu:~/$ cat 0-privileges.sql | mysql -hlocalhost -uroot -p
@@ -45,7 +45,7 @@ Write a script that creates the MySQL server user `user_0d_1`.
 * The `user_0d_1` password should be set to `user_0d_1_pwd`
 * If the user `user_0d_1` already exists, your script should not fail
 
-**Solution:** [1-create_user.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/1-create_user.sql)
+
 
 ```
 guillaume@ubuntu:~/$ cat 1-create_user.sql | mysql -hlocalhost -uroot -p
@@ -68,7 +68,7 @@ Write a script that creates the database `hbtn_0d_2` and the user `user_0d_2`.
 * If the database `hbtn_0d_2` already exists, your script should not fail
 * If the user `user_0d_2` already exists, your script should not fail
 
-**Source:** [2-create_read_user.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/2-create_read_user.sql)
+
 
 ```
 guillaume@ubuntu:~/$ cat 2-create_read_user.sql | mysql -hlocalhost -uroot -p
@@ -94,7 +94,7 @@ Write a script that creates the table `force_name` on your MySQL server.
 * The database name will be passed as an argument of the `mysql` command
 * If the table `force_name` already exists, your script should not fail
 
-**Solution:** [3-force_name.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/3-force_name.sql)
+
 
 ```
 guillaume@ubuntu:~/$ cat 3-force_name.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
@@ -125,7 +125,7 @@ Write a script that creates the table `id_not_null` on your MySQL server.
 * The database name will be passed as an argument of the `mysql` command
 * If the table `id_not_null` already exists, your script should not fail
 
-**Solution:** [4-never_empty.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/4-never_empty.sql)
+
 
 ```
 guillaume@ubuntu:~/$ cat 4-never_empty.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
@@ -156,7 +156,7 @@ Write a script that creates the table `unique_id` on your MySQL server.
 * The database name will be passed as an argument of the `mysql` command
 * If the table `unique_id` already exists, your script should not fail
 
-**Solution:** [5-unique_id.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/5-unique_id.sql)
+
 
 ```
 guillaume@ubuntu:~/$ cat 5-unique_id.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
@@ -187,20 +187,20 @@ Write a script that creates the database `hbtn_0d_usa` and the table `states` (i
 * If the database `hbtn_0d_usa` already exists, your script should not fail
 * If the table `states` already exists, your script should not fail
 
-**Solution:** [6-states.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/6-states.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 6-states.sql | mysql -hlocalhost -uroot -p
+$ guillaume@ubuntu:~/$ cat 6-states.sql | mysql -hlocalhost -uroot -p
 Enter password: 
-$ amonkeyprogramer@ubuntu:~/$ echo 'INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
-$ amonkeyprogramer@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  name
 1   California
 2   Arizona
 3   Texas
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Cities table
@@ -214,25 +214,25 @@ Write a script that creates the database `hbtn_0d_usa` and the table `cities` (i
 * If the database `hbtn_0d_usa` already exists, your script should not fail
 * If the table `cities` already exists, your script should not fail
 
-**Solution:** [7-cities.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/7-cities.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 7-cities.sql | mysql -hlocalhost -uroot -p
+$ guillaume@ubuntu:~/$ cat 7-cities.sql | mysql -hlocalhost -uroot -p
 Enter password: 
-$ amonkeyprogramer@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (1, "San Francisco");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (1, "San Francisco");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
-$ amonkeyprogramer@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  state_id    name
 1   1   San Francisco
-$ amonkeyprogramer@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (10, "Paris");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (10, "Paris");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 ERROR 1452 (23000) at line 1: Cannot add or update a child row: a foreign key constraint fails (`hbtn_0d_usa`.`cities`, CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`))
-$ amonkeyprogramer@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  state_id    name
 1   1   San Francisco
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Cities of California
@@ -244,17 +244,15 @@ Write a script that lists all the cities of California that can be found in the 
 * You are not allowed to use the `JOIN` keyword
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [8-cities_of_california_subquery.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/8-cities_of_california_subquery.sql)
-
 ```
-$ amonkeyprogramer@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  name
 1   California
 2   Arizona
 3   Texas
 4   Utah
-$ amonkeyprogramer@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  state_id    name
 1   1   San Francisco
@@ -263,12 +261,12 @@ id  state_id    name
 6   3   Paris
 7   3   Houston
 8   3   Dallas
-$ amonkeyprogramer@ubuntu:~/$ cat 8-cities_of_california_subquery.sql | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ cat 8-cities_of_california_subquery.sql | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  name
 1   San Francisco
 2   San Jose
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Cities by States
@@ -280,17 +278,17 @@ Write a script that lists all cities contained in the database `hbtn_0d_usa`.
 * You can use only one `SELECT` statement
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [9-cities_by_state_join.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/9-cities_by_state_join.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  name
 1   California
 2   Arizona
 3   Texas
 4   Utah
-$ amonkeyprogramer@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  state_id    name
 1   1   San Francisco
@@ -299,7 +297,7 @@ id  state_id    name
 6   3   Paris
 7   3   Houston
 8   3   Dallas
-$ amonkeyprogramer@ubuntu:~/$ cat 9-cities_by_state_join.sql | mysql -hlocalhost -uroot -p hbtn_0d_usa
+$ guillaume@ubuntu:~/$ cat 9-cities_by_state_join.sql | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  name    name
 1   San Francisco   California
@@ -308,7 +306,7 @@ id  name    name
 6   Paris   Texas
 7   Houston Texas
 8   Dallas  Texas
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Genre ID by show
@@ -322,10 +320,10 @@ Write a script that lists all shows contained in `hbtn_0d_tvshows` that have at 
 * You can use only one `SELECT` statement
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [10-genre_id_by_show.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/10-genre_id_by_show.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 10-genre_id_by_show.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 10-genre_id_by_show.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   genre_id
 Breaking Bad    1
@@ -347,7 +345,7 @@ Silicon Valley  5
 The Big Bang Theory 5
 The Last Man on Earth   1
 The Last Man on Earth   5
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Genre ID for all shows
@@ -362,10 +360,10 @@ Write a script that lists all shows contained in the database `hbtn_0d_tvshows`.
 * You can use only one `SELECT` statement
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [11-genre_id_all_shows.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/11-genre_id_all_shows.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 11-genre_id_all_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 11-genre_id_all_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   genre_id
 Better Call Saul    NULL
@@ -389,7 +387,7 @@ Silicon Valley  5
 The Big Bang Theory 5
 The Last Man on Earth   1
 The Last Man on Earth   5
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## No genre
@@ -403,15 +401,15 @@ Write a script that lists all shows contained in `hbtn_0d_tvshows` without a gen
 * You can use only one `SELECT` statement
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [12-no_genre.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/12-no_genre.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 12-no_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 12-no_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   genre_id
 Better Call Saul    NULL
 Homeland    NULL
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Number of shows by genre
@@ -428,10 +426,10 @@ Write a script that lists all genres from `hbtn_0d_tvshows` and displays the num
 * You can use only one `SELECT` statement
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [13-count_shows_by_genre.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/13-count_shows_by_genre.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 genre   number_of_shows
 Drama   5
@@ -442,7 +440,7 @@ Suspense    2
 Thriller    2
 Adventure   1
 Fantasy 1
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## My genres
@@ -457,10 +455,10 @@ Write a script that uses the `hbtn_0d_tvshows` database to lists all genres of t
 * You can use only one `SELECT` statement
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [14-my_genres.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/14-my_genres.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 14-my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 14-my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 name
 Crime
@@ -468,7 +466,7 @@ Drama
 Mystery
 Suspense
 Thriller
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Only Comedy
@@ -483,17 +481,17 @@ Write a script that lists all Comedy shows in the database `hbtn_0d_tvshows`.
 * You can use only one `SELECT` statement
 * The database name will be passed as an argument of the `mysql` command
 
-**Solution:** [15-comedy_only.sql](https://github.com/monoprosito/holbertonschool-higher_level_programming/blob/master/0x0E-SQL_more_queries/15-comedy_only.sql)
+
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 15-comedy_only.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 15-comedy_only.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title
 New Girl
 Silicon Valley
 The Big Bang Theory
 The Last Man on Earth
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## List shows and genres
@@ -511,7 +509,7 @@ Write a script that lists all shows, and all genres linked to that show, from th
 
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 16-shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 16-shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   name
 Better Call Saul    NULL
@@ -535,7 +533,7 @@ Silicon Valley  Comedy
 The Big Bang Theory Comedy
 The Last Man on Earth   Comedy
 The Last Man on Earth   Drama
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Not my genre
@@ -552,13 +550,13 @@ Write a script that uses the `hbtn_0d_tvshows` database to list all genres not l
 
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 100-not_my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 100-not_my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 name
 Adventure
 Comedy
 Fantasy
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## No Comedy tonight!
@@ -576,7 +574,7 @@ Write a script that lists all shows without the genre `Comedy` in the database `
 
 
 ```
-$ amonkeyprogramer@ubuntu:~/$ cat 101-not_a_comedy.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+$ guillaume@ubuntu:~/$ cat 101-not_a_comedy.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title
 Better Call Saul
@@ -585,7 +583,7 @@ Dexter
 Game of Thrones
 Homeland
 House
-$ amonkeyprogramer@ubuntu:~/$
+$ guillaume@ubuntu:~/$
 ```
 
 ## Rotten tomatoes
