@@ -1,6 +1,6 @@
 # Javascript - Web JQuery
 
-This was the preparatory project learning how to manipulate the DOM with jQuery
+> This was the preparatory project learning how to manipulate the DOM with jQuery
 before implementing it into our AirBNB project.
 
 ## Tests :heavy_check_mark:
